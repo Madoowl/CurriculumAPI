@@ -20,7 +20,8 @@ jobs:
     
     steps:
     #sequence of task that will be executed during the job
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    #WARNING : node16 has reached end of life so some actions version may not be suited for Node latest versions
     
     - name: setup node
       uses: actions/setup-node@v4
