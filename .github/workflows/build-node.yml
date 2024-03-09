@@ -65,7 +65,7 @@ jobs:
         echo $PWD
         echo ${{ github.workspace }}
         ls -a
-        ls -a /home/runner/work/CurriculumAPI/CurriculumAPI 
+        ls -a /home/runner/work/CurriculumAPI
 
     # - name: Build and push
     #   uses: docker/build-push-action@v5
