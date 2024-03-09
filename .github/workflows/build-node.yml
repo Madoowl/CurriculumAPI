@@ -1,0 +1,38 @@
+name: Build and test NodeJS app
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  #allow manual run from actions tab
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+        #specify node version
+    
+    steps:
+    #sequence of task that will be executed during the job
+    - uses: actions/checkout@v3
+    
+    - name: setup node
+      uses: action/setup-node@v4
+      with: ${{ matrix.node-version }}
+
+    - name: install dependencies
+      run : |
+        npm install
+        npm ci
+        # npm clean install
+
+    - name: build
+      run: |
+        npm run start --if-present
+        npm run test --if-present
