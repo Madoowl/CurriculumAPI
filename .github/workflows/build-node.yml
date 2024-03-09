@@ -61,7 +61,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
       
     - name: Get PWD
-        run: echo $PWD
+      run: echo $PWD
 
     - name: Build and push
       uses: docker/build-push-action@v5
