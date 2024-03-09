@@ -20,10 +20,10 @@ jobs:
     
     steps:
     #sequence of task that will be executed during the job
-    - uses: s/checkout@v3
+    - uses: actions/checkout@v3
     
     - name: setup node
-      uses: s/setup-node@v4
+      uses: actions/setup-node@v4
       with: ${{ matrix.node-version }}
 
     - name: install dependencies
