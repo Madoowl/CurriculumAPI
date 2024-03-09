@@ -19,7 +19,7 @@ jobs:
 
       - run: node --version
 
-       -run: npm --version 
+      - run: npm --version 
 
       - name: Checkout
         uses: actions/checkout@v4
