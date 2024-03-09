@@ -2,9 +2,7 @@ name: Build and test NodeJS app
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "dev" ]
   workflow_dispatch:
   #allow manual run from s tab
 

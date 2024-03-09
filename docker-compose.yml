@@ -9,8 +9,9 @@ services:
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
+      -  dist:/home/node/app/dist
     environment:
-      - NODE_ENV=development
+      - NODE_ENV=production
     networks:
       - app-network
 
@@ -19,4 +20,5 @@ networks:
     driver: bridge
 volumes:
   node_modules:
+  dist:
  
