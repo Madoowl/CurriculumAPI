@@ -10,38 +10,38 @@ on:
 
 jobs:
 
-  build:
+  # build:
 
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20]
-        #specify node version
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       node-version: [20]
+  #       #specify node version
     
-    steps:
-    #sequence of task that will be executed during the job
-    - uses: actions/checkout@v4
-    #WARNING : node16 has reached end of life so some actions version may not be suited for Node latest versions
+  #   steps:
+  #   #sequence of task that will be executed during the job
+  #   - uses: actions/checkout@v4
+  #   #WARNING : node16 has reached end of life so some actions version may not be suited for Node latest versions
     
-    - name: setup node
-      uses: actions/setup-node@v4
-      with: 
-        node-version: ${{ matrix.node-version }}
+  #   - name: setup node
+  #     uses: actions/setup-node@v4
+  #     with: 
+  #       node-version: ${{ matrix.node-version }}
 
-    - name: install dependencies
-      run : |
-        npm install
-        npm ci
-        # npm clean install
+  #   - name: install dependencies
+  #     run : |
+  #       npm install
+  #       npm ci
+  #       # npm clean install
 
-    - name: build
-      run: |
-        npm run build --if-present
-        npm run test --if-present
+  #   - name: build
+  #     run: |
+  #       npm run build --if-present
+  #       npm run test --if-present
 
   push-to-docker-hub:
     runs-on: ubuntu-latest
-    needs: [build]
+    # needs: [build]
     
     steps:
     
